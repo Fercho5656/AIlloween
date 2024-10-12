@@ -3,11 +3,94 @@ import Layout from "../layouts/Layout.astro";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CldUploadWidget } from "astro-cloudinary";
+import { Pointer, Sparkles, Zap, Image } from "lucide-react";
 ---
 
 <Layout title="AIlloween">
-	<main class="grid content-center m-auto">
-		<h1>Welcome to <span class="text-gradient">AIlloween</span></h1>
+	<main class="flex-1">
+		<section
+			class="w-full bg-black text-white py-12 md:py-24 lg:py-32 xl:py-48"
+		>
+			<div class="px-4 md:px-6">
+				<div
+					class="flex flex-col items-center justify-center space-y-4 text-center"
+				>
+					<div class="space-y-4">
+						<h1
+							class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none"
+						>
+							Create Spooktacular Costumes with <span class="text-gradient"
+								>AIlloween</span
+							>
+						</h1>
+						<p class="mx-auto max-w-[700px] text-gray-300 md:text-2xl">
+							Unleash your creativity with our AI-powered costume generator.
+							Design unique, personalized Halloween costumes in seconds!
+						</p>
+					</div>
+					<div class="space-x-4">Drag n drop component</div>
+				</div>
+			</div>
+		</section>
+
+		<section
+			class="w-full bg-orange-100 text-black py-12 md:py-24 lg:py-32 xl:py-48"
+		>
+			<div class="px-4 md:px-6">
+				<h2
+					class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12"
+				>
+					How it Works
+				</h2>
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+				>
+					<Card>
+						<CardHeader>
+							<Pointer className="w-12 h-12 text-orange-500 mb-4" size={48} />
+							<CardTitle>Select Your Costume</CardTitle>
+						</CardHeader>
+						<CardContent>
+							Let our AI know what kind of costume you want to try!
+						</CardContent>
+					</Card>
+
+					<Card>
+						<CardHeader>
+							<Sparkles
+								className="w-12 h-12 text-orange-500 mb-4"
+								size="{48}"
+							/>
+							<CardTitle>AI Magic</CardTitle>
+						</CardHeader>
+						<CardContent>
+							Cloudinary advanced AI processes your selection and generates
+							unique previews
+						</CardContent>
+					</Card>
+
+					<Card>
+						<CardHeader>
+							<Zap className="w-12 h-12 text-orange-500 mb-4" size="{48}" />
+							<CardTitle>Instant Results</CardTitle>
+						</CardHeader>
+						<CardContent>
+							Get your custome design in seconds, ready to be shared
+						</CardContent>
+					</Card>
+
+					<Card>
+						<CardHeader>
+							<Image className="w-12 h-12 text-orange-500 mb-4" size="{48}" />
+							<CardTitle>Spooky Scary Background</CardTitle>
+						</CardHeader>
+						<CardContent>
+							Replace the background with a spooky scary Halloween themed one
+						</CardContent>
+					</Card>
+				</div>
+			</div>
+		</section>
 
 		<CldUploadWidget
 			id="cld-upload-widget"
@@ -108,10 +191,6 @@ import { CldUploadWidget } from "astro-cloudinary";
 
 <style>
 	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
