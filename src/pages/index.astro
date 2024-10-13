@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CldUploadWidget } from "astro-cloudinary";
 import { Pointer, Sparkles, Zap, Image } from "lucide-react";
+import Dropzone from "@/components/ui/dropzone";
 ---
 
 <Layout title="AIlloween">
@@ -28,7 +29,9 @@ import { Pointer, Sparkles, Zap, Image } from "lucide-react";
 							Design unique, personalized Halloween costumes in seconds!
 						</p>
 					</div>
-					<div class="space-x-4">Drag n drop component</div>
+					<div class="pt-12 space-x-4">
+						<Dropzone client:load />
+					</div>
 				</div>
 			</div>
 		</section>
