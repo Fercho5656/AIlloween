@@ -1,4 +1,6 @@
-export const uploadPhoto = async (photo: File) => {
+import type { APIResponse } from "@/types/api"
+
+export const uploadPhoto = async (photo: File): Promise<APIResponse> => {
   const formData = new FormData()
   formData.append('file', photo)
 
@@ -11,5 +13,5 @@ export const uploadPhoto = async (photo: File) => {
     throw new Error('Failed to upload photo')
   }
 
-  return await response.json()
+  return await response.json() as APIResponse
 }
