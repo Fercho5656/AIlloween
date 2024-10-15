@@ -1,0 +1,222 @@
+{
+  "Terror/Horror": [
+    {
+      "title": "Michael Myers",
+      "prompt": "Michael Myers"
+    },
+    {
+      "title": "Freddy Krueger",
+      "prompt": "Freddy Krueger"
+    },
+    {
+      "title": "Jason Voorhees",
+      "prompt": "Jason Voorhees"
+    },
+    {
+      "title": "Pennywise",
+      "prompt": "Pennywise"
+    },
+    {
+      "title": "Chucky",
+      "prompt": "Chucky"
+    }
+  ],
+  "Fantasy": [
+    {
+      "title": "Elf",
+      "prompt": "Lord of Rings Elf"
+    },
+    {
+      "title": "Princess",
+      "prompt": "Princess"
+    },
+    {
+      "title": "Wizard",
+      "prompt": "Wizard"
+    },
+    {
+      "title": "Sorceress",
+      "prompt": "Sorceress"
+    },
+    {
+      "title": "Knight",
+      "prompt": "Knight"
+    }
+  ],
+  "Superheroes": [
+    {
+      "title": "Spider-Man",
+      "prompt": "Spider-Man"
+    },
+    {
+      "title": "Wonder Woman",
+      "prompt": "Wonder Woman"
+    },
+    {
+      "title": "Iron Man",
+      "prompt": "Iron Man"
+    },
+    {
+      "title": "Captain Marvel",
+      "prompt": "Captain Marvel"
+    },
+    {
+      "title": "Black Widow",
+      "prompt": "Black Widow"
+    }
+  ],
+  "Sci-Fi": [
+    {
+      "title": "Darth Vader",
+      "prompt": "Darth Vader"
+    },
+    {
+      "title": "Spock",
+      "prompt": "Spock"
+    },
+    {
+      "title": "The Mandalorian",
+      "prompt": "The Mandalorian"
+    },
+    {
+      "title": "Ripley",
+      "prompt": "Ripley"
+    },
+    {
+      "title": "Neo",
+      "prompt": "Neo"
+    }
+  ],
+  "Post-Apocalyptic": [
+    {
+      "title": "Mad Max",
+      "prompt": "Mad Max"
+    },
+    {
+      "title": "Rick Grimes",
+      "prompt": "Rick Grimes"
+    },
+    {
+      "title": "Katniss Everdeen",
+      "prompt": "Katniss Everdeen"
+    },
+    {
+      "title": "Joel",
+      "prompt": "Joel"
+    },
+    {
+      "title": "Furiosa",
+      "prompt": "Furiosa"
+    }
+  ],
+  "Mythological Figures": [
+    {
+      "title": "Medusa",
+      "prompt": "Medusa"
+    },
+    {
+      "title": "Valkyrie",
+      "prompt": "Valkyrie"
+    },
+    {
+      "title": "Achilles",
+      "prompt": "Achilles"
+    },
+    {
+      "title": "Persephone",
+      "prompt": "Persephone"
+    },
+    {
+      "title": "Thor",
+      "prompt": "Thor"
+    }
+  ],
+  "Classic Monsters": [
+    {
+      "title": "Vampire",
+      "prompt": "Vampire"
+    },
+    {
+      "title": "Witch",
+      "prompt": "Witch"
+    },
+    {
+      "title": "Frankenstein’s Monster",
+      "prompt": "Frankenstein’s Monster"
+    },
+    {
+      "title": "Zombie",
+      "prompt": "Zombie"
+    },
+    {
+      "title": "Mummy",
+      "prompt": "Mummy"
+    }
+  ],
+  "Steampunk": [
+    {
+      "title": "Airship Captain",
+      "prompt": "Airship Captain"
+    },
+    {
+      "title": "Inventor",
+      "prompt": "Inventor"
+    },
+    {
+      "title": "Time Traveler",
+      "prompt": "Time Traveler"
+    },
+    {
+      "title": "Steampunk Bounty Hunter",
+      "prompt": "Steampunk Bounty Hunter"
+    },
+    {
+      "title": "Clockwork Engineer",
+      "prompt": "Clockwork Engineer"
+    }
+  ],
+  "Pirates": [
+    {
+      "title": "Captain Jack Sparrow",
+      "prompt": "Captain Jack Sparrow"
+    },
+    {
+      "title": "Anne Bonny",
+      "prompt": "Anne Bonny"
+    },
+    {
+      "title": "Blackbeard",
+      "prompt": "Blackbeard"
+    },
+    {
+      "title": "Privateer",
+      "prompt": "Privateer"
+    },
+    {
+      "title": "Pirate Queen",
+      "prompt": "Pirate Queen"
+    }
+  ],
+  "Video Games": [
+    {
+      "title": "Lara Croft",
+      "prompt": "Lara Croft"
+    },
+    {
+      "title": "Geralt of Rivia",
+      "prompt": "Geralt of Rivia"
+    },
+    {
+      "title": "Link",
+      "prompt": "Link"
+    },
+    {
+      "title": "Jill Valentine",
+      "prompt": "Jill Valentine"
+    },
+    {
+      "title": "Nathan Drake",
+      "prompt": "Nathan Drake"
+    }
+  ]
+}
