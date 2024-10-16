@@ -1,5 +1,6 @@
 ---
 import { Button } from "@/components/ui/button";
+import { Tabs } from "@/components/tabs";
 import Layout from "@/layouts/Layout.astro";
 import { getCldImageUrl } from "astro-cloudinary/helpers";
 
@@ -11,9 +12,7 @@ if (id == null) return Astro.redirect("/");
 const url = getCldImageUrl({ src: id });
 console.log({ url });
 
-import type { Costume } from "@/types/costume";
 import costumes from "@/data/costumes.json";
-console.log({ costumes });
 ---
 
 <Layout title="Photo Booth">
@@ -28,28 +27,7 @@ console.log({ costumes });
         />
       </div>
       <div class="w-1/2">
-        <div class="grid grid-cols-3 gap-4">
-          {
-            Object.entries(costumes).map(([category, items]) => (
-              <div class="col-span-3">
-                <h2 class="text-2xl font-bold">{category}</h2>
-                <div class="grid grid-cols-3 gap-4">
-                  {items.map((costume: Costume) => (
-                    <div class="relative">
-                      <img
-                        src={url}
-                        alt={costume.title}
-                        title={costume.title}
-                        class="w-full h-full rounded-sm object-cover cursor-pointer transition-transform hover:transform hover:scale-110 hover:rotate-6"
-                        onclick=""
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))
-          }
-        </div>
+        <Tabs data={costumes} client:load />
       </div>
     </div>
   </main>
