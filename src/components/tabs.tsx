@@ -1,6 +1,7 @@
 import { Tabs as BaseTabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { useState } from "react";
+import { useCostumeStore } from "@/store/store";
+import type { Costume } from "@/types/costume";
 
 interface Props {
   data: {
@@ -10,7 +11,17 @@ interface Props {
 
 export function Tabs({ data }: Props) {
   const categories = Object.keys(data);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const selectedCostume = useCostumeStore(state => state.selectedCostume);
+  const setSelectedCostume = useCostumeStore(state => state.setSelectedCostume);
+
+  const handleSelect = (item: Costume) => {
+    if (selectedCostume.title === item.title) {
+      setSelectedCostume({} as Costume);
+    } else {
+      setSelectedCostume(item);
+    }
+  }
+
   return (
     <BaseTabs defaultValue={categories[0]}>
       <ScrollArea>
@@ -30,8 +41,8 @@ export function Tabs({ data }: Props) {
             {data[category].map((item, index) => (
               <div
                 key={index}
-                className={`col-span-3 rounded-sm relative cursor-pointer transition-transform hover:transform hover:scale-105 hover:rotate-2 ${selectedImage === item.title ? 'border-[6px] border-blue-500' : ''}`}
-                onClick={() => setSelectedImage(item.title)}>
+                className={`col-span-3 rounded-sm relative cursor-pointer transition-transform hover:transform hover:scale-105 hover:rotate-2 ${selectedCostume.title === item.title ? 'border-[6px] border-blue-500' : ''}`}
+                onClick={() => handleSelect(item)}>
                 <img
                   src={item.url}
                   alt={item.title}
