@@ -2,221 +2,125 @@
   "Terror/Horror": [
     {
       "title": "Michael Myers",
-      "prompt": "Michael Myers"
+      "prompt": "michael myers mask and clothes for halloween",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/michael_myers"
     },
     {
       "title": "Freddy Krueger",
-      "prompt": "Freddy Krueger"
+      "prompt": "freddy krueger costume for halloween",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/static/freddy_kruegger"
     },
     {
       "title": "Jason Voorhees",
-      "prompt": "Jason Voorhees"
+      "prompt": "Jason Voorhees mask and clothes for halloween",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     },
     {
       "title": "Pennywise",
-      "prompt": "Pennywise"
+      "prompt": "Pennywise from IT costume and wig for halloween",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     },
     {
       "title": "Chucky",
-      "prompt": "Chucky"
+      "prompt": "Chucky from Child Play scars and clothes for halloween",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
+    },
+    {
+      "title": "Leatherface",
+      "prompt": "Leatherface mask and clothes for halloween",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
+    },
+    {
+      "title": "Ghostface",
+      "prompt": "Ghostface",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
+    },
+    {
+      "title": "Joker",
+      "prompt": "DC's The Joker",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     }
   ],
   "Fantasy": [
     {
-      "title": "Elf",
-      "prompt": "Lord of Rings Elf"
-    },
-    {
-      "title": "Princess",
-      "prompt": "Princess"
-    },
-    {
-      "title": "Wizard",
-      "prompt": "Wizard"
-    },
-    {
-      "title": "Sorceress",
-      "prompt": "Sorceress"
-    },
-    {
-      "title": "Knight",
-      "prompt": "Knight"
+      "title": "Harry Potter",
+      "prompt": "Harry Potter",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     }
   ],
   "Superheroes": [
     {
-      "title": "Spider-Man",
-      "prompt": "Spider-Man"
-    },
-    {
       "title": "Wonder Woman",
-      "prompt": "Wonder Woman"
-    },
-    {
-      "title": "Iron Man",
-      "prompt": "Iron Man"
-    },
-    {
-      "title": "Captain Marvel",
-      "prompt": "Captain Marvel"
-    },
-    {
-      "title": "Black Widow",
-      "prompt": "Black Widow"
-    }
-  ],
-  "Sci-Fi": [
-    {
-      "title": "Darth Vader",
-      "prompt": "Darth Vader"
-    },
-    {
-      "title": "Spock",
-      "prompt": "Spock"
-    },
-    {
-      "title": "The Mandalorian",
-      "prompt": "The Mandalorian"
-    },
-    {
-      "title": "Ripley",
-      "prompt": "Ripley"
-    },
-    {
-      "title": "Neo",
-      "prompt": "Neo"
-    }
-  ],
-  "Post-Apocalyptic": [
-    {
-      "title": "Mad Max",
-      "prompt": "Mad Max"
-    },
-    {
-      "title": "Rick Grimes",
-      "prompt": "Rick Grimes"
-    },
-    {
-      "title": "Katniss Everdeen",
-      "prompt": "Katniss Everdeen"
-    },
-    {
-      "title": "Joel",
-      "prompt": "Joel"
-    },
-    {
-      "title": "Furiosa",
-      "prompt": "Furiosa"
+      "prompt": "Wonder Woman",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     }
   ],
   "Mythological Figures": [
     {
       "title": "Medusa",
-      "prompt": "Medusa"
+      "prompt": "Medusa",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     },
     {
       "title": "Valkyrie",
-      "prompt": "Valkyrie"
+      "prompt": "Valkyrie",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     },
     {
       "title": "Achilles",
-      "prompt": "Achilles"
-    },
-    {
-      "title": "Persephone",
-      "prompt": "Persephone"
-    },
-    {
-      "title": "Thor",
-      "prompt": "Thor"
+      "prompt": "Achilles",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     }
   ],
   "Classic Monsters": [
     {
       "title": "Vampire",
-      "prompt": "Vampire"
+      "prompt": "Vampire",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     },
     {
       "title": "Witch",
-      "prompt": "Witch"
+      "prompt": "Witch",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     },
     {
       "title": "Frankenstein’s Monster",
-      "prompt": "Frankenstein’s Monster"
+      "prompt": "Frankenstein’s Monster",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     },
     {
       "title": "Zombie",
-      "prompt": "Zombie"
+      "prompt": "Zombie",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     },
     {
       "title": "Mummy",
-      "prompt": "Mummy"
-    }
-  ],
-  "Steampunk": [
-    {
-      "title": "Airship Captain",
-      "prompt": "Airship Captain"
-    },
-    {
-      "title": "Inventor",
-      "prompt": "Inventor"
-    },
-    {
-      "title": "Time Traveler",
-      "prompt": "Time Traveler"
-    },
-    {
-      "title": "Steampunk Bounty Hunter",
-      "prompt": "Steampunk Bounty Hunter"
-    },
-    {
-      "title": "Clockwork Engineer",
-      "prompt": "Clockwork Engineer"
+      "prompt": "Mummy",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     }
   ],
   "Pirates": [
     {
       "title": "Captain Jack Sparrow",
-      "prompt": "Captain Jack Sparrow"
-    },
-    {
-      "title": "Anne Bonny",
-      "prompt": "Anne Bonny"
-    },
-    {
-      "title": "Blackbeard",
-      "prompt": "Blackbeard"
-    },
-    {
-      "title": "Privateer",
-      "prompt": "Privateer"
-    },
-    {
-      "title": "Pirate Queen",
-      "prompt": "Pirate Queen"
+      "prompt": "Captain Jack Sparrow",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     }
   ],
   "Video Games": [
     {
       "title": "Lara Croft",
-      "prompt": "Lara Croft"
+      "prompt": "Lara Croft",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     },
     {
       "title": "Geralt of Rivia",
-      "prompt": "Geralt of Rivia"
+      "prompt": "Geralt of Rivia",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     },
     {
       "title": "Link",
-      "prompt": "Link"
-    },
-    {
-      "title": "Jill Valentine",
-      "prompt": "Jill Valentine"
-    },
-    {
-      "title": "Nathan Drake",
-      "prompt": "Nathan Drake"
+      "prompt": "Link",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
     }
   ]
 }
