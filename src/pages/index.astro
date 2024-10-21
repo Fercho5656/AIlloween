@@ -8,123 +8,90 @@ import Dropzone from "@/components/ui/dropzone";
 ---
 
 <Layout title="AIlloween">
-	<main class="flex-1">
-		<section
-			class="w-full bg-black text-white py-12 md:py-24 lg:py-32 xl:py-48"
-		>
-			<div class="px-4 md:px-6">
-				<div
-					class="flex flex-col items-center justify-center space-y-4 text-center"
-				>
-					<div class="space-y-4">
-						<h1
-							class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none"
+	<section
+		id="hero"
+		class="w-full h-screen bg-black text-white py-12 md:py-24 lg:py-32 xl:py-64"
+	>
+		<div class="px-4 md:px-6">
+			<div
+				class="flex flex-col items-center justify-center space-y-4 text-center"
+			>
+				<div class="space-y-4">
+					<h1
+						class="text-7xl font-bold mb-12 tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none"
+					>
+						Create Spooktacular Costumes with <span class="text-gradient"
+							>AIlloween</span
 						>
-							Create Spooktacular Costumes with <span class="text-gradient"
-								>AIlloween</span
-							>
-						</h1>
-						<p class="mx-auto max-w-[700px] text-gray-300 md:text-2xl">
-							Unleash your creativity with our AI-powered costume generator.
-							Design unique, personalized Halloween costumes in seconds!
-						</p>
-					</div>
-					<div class="pt-12 space-x-4">
-						<Dropzone client:load />
-					</div>
+					</h1>
+					<p class="mx-auto max-w-[700px] text-gray-300 md:text-2xl">
+						Unleash your creativity with our AI-powered costume generator.
+						Design unique, personalized Halloween costumes in seconds!
+					</p>
+				</div>
+				<div class="pt-12 space-x-4">
+					<Dropzone client:load />
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section
-			class="w-full bg-orange-100 text-black py-12 md:py-24 lg:py-32 xl:py-48"
-		>
-			<div class="px-4 md:px-6">
-				<h2
-					class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12"
-				>
-					How it Works
-				</h2>
-				<div
-					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
-				>
-					<Card>
-						<CardHeader>
-							<Pointer className="w-12 h-12 text-orange-500 mb-4" size={48} />
-							<CardTitle>Select Your Costume</CardTitle>
-						</CardHeader>
-						<CardContent>
-							Let our AI know what kind of costume you want to try!
-						</CardContent>
-					</Card>
+	<section
+		id="how-it-works"
+		class="w-full h-screen bg-orange-100 text-black py-12 md:py-24 lg:py-32"
+	>
+		<div class="px-4 md:px-6">
+			<h2
+				class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12"
+			>
+				How it Works
+			</h2>
+			<div
+				class="py-28 text-lg container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16"
+			>
+				<Card>
+					<CardHeader>
+						<Pointer className="w-12 h-12 text-orange-500 mb-4" size={48} />
+						<CardTitle className="text-xl">Select Your Costume</CardTitle>
+					</CardHeader>
+					<CardContent>
+						Let our AI know what kind of costume you want to try!
+					</CardContent>
+				</Card>
 
-					<Card>
-						<CardHeader>
-							<Sparkles
-								className="w-12 h-12 text-orange-500 mb-4"
-								size="{48}"
-							/>
-							<CardTitle>AI Magic</CardTitle>
-						</CardHeader>
-						<CardContent>
-							Cloudinary advanced AI processes your selection and generates
-							unique previews
-						</CardContent>
-					</Card>
+				<Card>
+					<CardHeader>
+						<Sparkles className="w-12 h-12 text-orange-500 mb-4" size="{48}" />
+						<CardTitle className="text-xl">AI Magic</CardTitle>
+					</CardHeader>
+					<CardContent>
+						Cloudinary advanced AI processes your selection and generates unique
+						previews
+					</CardContent>
+				</Card>
 
-					<Card>
-						<CardHeader>
-							<Zap className="w-12 h-12 text-orange-500 mb-4" size="{48}" />
-							<CardTitle>Instant Results</CardTitle>
-						</CardHeader>
-						<CardContent>
-							Get your custome design in seconds, ready to be shared
-						</CardContent>
-					</Card>
+				<Card>
+					<CardHeader>
+						<Zap className="w-12 h-12 text-orange-500 mb-4" size="{48}" />
+						<CardTitle className="text-xl">Instant Results</CardTitle>
+					</CardHeader>
+					<CardContent>
+						Get your custome design in seconds, ready to be shared
+					</CardContent>
+				</Card>
 
-					<Card>
-						<CardHeader>
-							<Image className="w-12 h-12 text-orange-500 mb-4" size="{48}" />
-							<CardTitle>Spooky Scary Background</CardTitle>
-						</CardHeader>
-						<CardContent>
-							Replace the background with a spooky scary Halloween themed one
-						</CardContent>
-					</Card>
-				</div>
+				<Card>
+					<CardHeader>
+						<Image className="w-12 h-12 text-orange-500 mb-4" size="{48}" />
+						<CardTitle className="text-xl">Spooky Scary Background</CardTitle>
+					</CardHeader>
+					<CardContent>
+						Replace the background with a spooky scary Halloween themed one
+					</CardContent>
+				</Card>
 			</div>
-		</section>
-
-		<CldUploadWidget
-			id="cld-upload-widget"
-			uploadPreset="ailloween"
-			options={{
-				sources: ["local"],
-				multiple: false,
-			}}
-		>
-			<Button>Upload</Button>
-		</CldUploadWidget>
-
-		<img id="main-img" src="" alt="" />
-
-		<select disabled name="costume-select" id="costume-select">
-			<option value="" selected disabled>Select a costume</option>
-			<option value="michael myers">Michael Myers</option>
-			<option value="freddy krueger">Freddy Krueger</option>
-			<option value="joker">The Joker</option>
-		</select>
-		<label for="chk-replace-bg"
-			>Add <span class="text-gradient">spooky scary</span> background
-			<input
-				disabled
-				type="checkbox"
-				name="chk-replace-bg"
-				id="chk-replace-bg"
-			/>
-		</label>
-		<Button disabled id="btn-generate-costume">Generate</Button>
-	</main>
+		</div>
+	</section>
 </Layout>
 
 <script>
@@ -197,13 +164,6 @@ import Dropzone from "@/components/ui/dropzone";
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
