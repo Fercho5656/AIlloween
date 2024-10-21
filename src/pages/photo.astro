@@ -1,8 +1,11 @@
 ---
 import { Button } from "@/components/ui/button";
 import { Tabs } from "@/components/tabs";
+import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import Layout from "@/layouts/Layout.astro";
 import { getCldImageUrl } from "astro-cloudinary/helpers";
+import costumes from "@/data/costumes.json";
+import { Download, Twitter } from "lucide-react";
 
 const { searchParams } = Astro.url;
 const id = searchParams.get("id");
@@ -11,26 +14,205 @@ if (id == null) return Astro.redirect("/");
 
 const url = getCldImageUrl({ src: id });
 console.log({ url });
-
-import costumes from "@/data/costumes.json";
 ---
 
 <Layout title="Photo Booth">
   <main class="p-4">
     <div class="w-full h-64 flex gap-4">
       <div class="w-1/2 grid items-center">
-        <img
-          id="main-img"
-          src={url}
-          alt="Uploaded Image"
-          class="w-full h-full object-cover rounded-sm"
-        />
+        <div class="w-full grid place-items-center text-white">
+          <div class="grid place-items-center relative">
+            <LoadingSpinner
+              id="loading-spinner"
+              size={64}
+              className="absolute opacity-0 z-10"
+            />
+            <div class="relative">
+              <div class="absolute top-0 right-0 z-[5]">
+                <button
+                  id="dropdown-toggle"
+                  class="px-4 py-2 border-none cursor-pointer outline-none text-xl"
+                  >...</button
+                >
+                <ul
+                  id="dropdown-menu"
+                  class="transition-opacity rounded-sm opacity-0 absolute bg-gray-100 text-black min-w-[160px] shadow-lg z-[5]"
+                >
+                  <li
+                    id="download-img"
+                    class="flex items-center gap-x-2 hover:bg-gray-400 cursor-pointer p-2"
+                  >
+                    <Download size={16} />
+                    Download
+                  </li>
+                  <li
+                    id="share-twitter"
+                    class="flex items-center gap-x-2 hover:bg-gray-400 cursor-pointer p-2"
+                  >
+                    <Twitter size={16} />
+                    Share to Twitter
+                  </li>
+                </ul>
+              </div>
+              <img
+                id="main-img"
+                src={url}
+                data-public-id={id}
+                alt="Uploaded Image"
+                class="w-auto h-[512px] object-cover rounded-sm transition-opacity"
+              />
+            </div>
+          </div>
+          <div class="w-full flex flex-col items-center text-white mt-4">
+            <h2 class="text-2xl font-bold mt-8">Instructions</h2>
+            <ol class="list-decimal list-inside mt-4">
+              <li>
+                Select a costume from the list on the right side of the screen.
+              </li>
+              <li>
+                Click the <strong>Take Photo</strong> button to apply the costume
+                to your image.
+              </li>
+              <li>
+                Click the <strong>Download</strong> button to save your photo.
+              </li>
+            </ol>
+          </div>
+        </div>
       </div>
       <div class="w-1/2">
         <Tabs data={costumes} client:load />
       </div>
     </div>
+    <div id="div-take-photo" class="absolute bottom-4 right-4 opacity-0">
+      <input type="checkbox" id="chk-replace-bg" />
+      <label for="chk-replace-bg" class="text-white">
+        Add Spooky Scary Background 🎃
+      </label>
+      <Button
+        id="btn-take-photo"
+        className="text-xl transition-all"
+        variant="secondary"
+        disabled
+      >
+        Take Photo
+      </Button>
+    </div>
   </main>
 </Layout>
 
-<script></script>
+<script>
+  import type { Costume } from "@/types/costume";
+  import { getState, subscribe } from "@/store/store";
+  import { getCldImageUrl } from "astro-cloudinary/helpers";
+  import type { ImageOptions } from "@cloudinary-util/url-loader";
+
+  const divTakePhoto = document.querySelector(
+    "#div-take-photo",
+  ) as HTMLDivElement;
+  const btnTakePhoto = document.querySelector(
+    "#btn-take-photo",
+  ) as HTMLButtonElement;
+  const chkReplaceBg = document.querySelector(
+    "#chk-replace-bg",
+  ) as HTMLInputElement;
+  const mainImg = document.querySelector("#main-img") as HTMLImageElement;
+  const loadingSpinner = document.querySelector(
+    "#loading-spinner",
+  ) as HTMLDivElement;
+  const dropdownToggle = document.querySelector(
+    "#dropdown-toggle",
+  ) as HTMLButtonElement;
+  const dropdownMenu = document.querySelector(
+    "#dropdown-menu",
+  ) as HTMLUListElement;
+  const downloadImgLi = document.querySelector(
+    "#download-img",
+  ) as HTMLLIElement;
+
+  let selectedCostume: Costume | null = getState().selectedCostume;
+
+  const handleInitLoad = () => {
+    btnTakePhoto.disabled = true;
+    mainImg.classList.add("brightness-50");
+    loadingSpinner.classList.add("opacity-100");
+    loadingSpinner.classList.remove("opacity-0");
+  };
+
+  const handleFinishLoad = () => {
+    btnTakePhoto.disabled = false;
+    mainImg.classList.remove("brightness-50");
+    loadingSpinner.classList.remove("opacity-100");
+    loadingSpinner.classList.add("opacity-0");
+  };
+
+  btnTakePhoto.addEventListener("click", () => {
+    if (selectedCostume == null) return;
+
+    const options: ImageOptions = {
+      src: mainImg.dataset.publicId!,
+      replace: {
+        from: "wearings",
+        to: `${selectedCostume.prompt}`,
+        preserveGeometry: true,
+      },
+    };
+
+    if (chkReplaceBg.checked) {
+      options.replaceBackground = {
+        prompt: "spooky scary halloween background",
+      };
+    }
+
+    const transformedUrl = getCldImageUrl(options);
+    mainImg.src = transformedUrl;
+    handleInitLoad();
+  });
+
+  const downloadImg = async () => {
+    const url = mainImg.src;
+
+    try {
+      const response = await fetch(url, {
+        mode: "cors",
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to download image");
+      }
+
+      const blob = await response.blob();
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "photo.png";
+      link.click();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  mainImg.addEventListener("load", handleFinishLoad);
+  mainImg.addEventListener("error", handleFinishLoad);
+  downloadImgLi.addEventListener("click", downloadImg);
+
+  dropdownToggle.addEventListener("click", () => {
+    dropdownMenu.style.opacity =
+      dropdownMenu.style.opacity === "100" ? "0" : "100";
+  });
+
+  document.addEventListener("click", (event: any) => {
+    if (
+      !dropdownToggle.contains(event.target) &&
+      !dropdownMenu.contains(event.target)
+    ) {
+      dropdownMenu.style.opacity = "0";
+    }
+  });
+
+  subscribe((state) => {
+    const selectedCostumeString = JSON.stringify(state.selectedCostume);
+    selectedCostume = state.selectedCostume;
+    btnTakePhoto.disabled = selectedCostumeString == "{}";
+    divTakePhoto.classList.toggle("opacity-0", selectedCostumeString == "{}");
+  });
+</script>
