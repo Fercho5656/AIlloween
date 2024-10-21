@@ -17,88 +17,86 @@ console.log({ url });
 ---
 
 <Layout title="Photo Booth">
-  <main class="p-4">
-    <div class="w-full h-64 flex gap-4">
-      <div class="w-1/2 grid items-center">
-        <div class="w-full grid place-items-center text-white">
-          <div class="grid place-items-center relative">
-            <LoadingSpinner
-              id="loading-spinner"
-              size={64}
-              className="absolute opacity-0 z-10"
-            />
-            <div class="relative">
-              <div class="absolute top-0 right-0 z-[5]">
-                <button
-                  id="dropdown-toggle"
-                  class="px-4 py-2 border-none cursor-pointer outline-none text-xl"
-                  >...</button
+  <section class="w-full h-64 flex gap-4 pt-32">
+    <div class="w-1/2 grid items-center">
+      <div class="w-full grid place-items-center text-white">
+        <div class="grid place-items-center relative">
+          <LoadingSpinner
+            id="loading-spinner"
+            size={64}
+            className="absolute opacity-0 z-10"
+          />
+          <div class="relative">
+            <div class="absolute top-0 right-0 z-[5]">
+              <button
+                id="dropdown-toggle"
+                class="px-4 py-2 border-none cursor-pointer outline-none text-xl"
+                >...</button
+              >
+              <ul
+                id="dropdown-menu"
+                class="transition-opacity rounded-sm opacity-0 absolute bg-gray-100 text-black min-w-[160px] shadow-lg z-[5]"
+              >
+                <li
+                  id="download-img"
+                  class="flex items-center gap-x-2 hover:bg-gray-400 cursor-pointer p-2"
                 >
-                <ul
-                  id="dropdown-menu"
-                  class="transition-opacity rounded-sm opacity-0 absolute bg-gray-100 text-black min-w-[160px] shadow-lg z-[5]"
+                  <Download size={16} />
+                  Download
+                </li>
+                <li
+                  id="share-twitter"
+                  class="flex items-center gap-x-2 hover:bg-gray-400 cursor-pointer p-2"
                 >
-                  <li
-                    id="download-img"
-                    class="flex items-center gap-x-2 hover:bg-gray-400 cursor-pointer p-2"
-                  >
-                    <Download size={16} />
-                    Download
-                  </li>
-                  <li
-                    id="share-twitter"
-                    class="flex items-center gap-x-2 hover:bg-gray-400 cursor-pointer p-2"
-                  >
-                    <Twitter size={16} />
-                    Share to Twitter
-                  </li>
-                </ul>
-              </div>
-              <img
-                id="main-img"
-                src={url}
-                data-public-id={id}
-                alt="Uploaded Image"
-                class="w-auto h-[512px] object-cover rounded-sm transition-opacity"
-              />
+                  <Twitter size={16} />
+                  Share to Twitter
+                </li>
+              </ul>
             </div>
-          </div>
-          <div class="w-full flex flex-col items-center text-white mt-4">
-            <h2 class="text-2xl font-bold mt-8">Instructions</h2>
-            <ol class="list-decimal list-inside mt-4">
-              <li>
-                Select a costume from the list on the right side of the screen.
-              </li>
-              <li>
-                Click the <strong>Take Photo</strong> button to apply the costume
-                to your image.
-              </li>
-              <li>
-                Click the <strong>Download</strong> button to save your photo.
-              </li>
-            </ol>
+            <img
+              id="main-img"
+              src={url}
+              data-public-id={id}
+              alt="Uploaded Image"
+              class="w-auto h-[512px] object-cover rounded-sm transition-opacity"
+            />
           </div>
         </div>
-      </div>
-      <div class="w-1/2">
-        <Tabs data={costumes} client:load />
+        <div class="w-full flex flex-col items-center text-white mt-4">
+          <h2 class="text-2xl font-bold mt-8">Instructions</h2>
+          <ol class="list-decimal list-inside mt-4">
+            <li>
+              Select a costume from the list on the right side of the screen.
+            </li>
+            <li>
+              Click the <strong>Take Photo</strong> button to apply the costume to
+              your image.
+            </li>
+            <li>
+              Click the <strong>Download</strong> button to save your photo.
+            </li>
+          </ol>
+        </div>
       </div>
     </div>
-    <div id="div-take-photo" class="absolute bottom-4 right-4 opacity-0">
-      <input type="checkbox" id="chk-replace-bg" />
-      <label for="chk-replace-bg" class="text-white">
-        Add Spooky Scary Background 🎃
-      </label>
-      <Button
-        id="btn-take-photo"
-        className="text-xl transition-all"
-        variant="secondary"
-        disabled
-      >
-        Take Photo
-      </Button>
+    <div class="w-1/2">
+      <Tabs data={costumes} client:load />
     </div>
-  </main>
+  </section>
+  <div id="div-take-photo" class="absolute bottom-4 right-4 opacity-0">
+    <input type="checkbox" id="chk-replace-bg" />
+    <label for="chk-replace-bg" class="text-white">
+      Add Spooky Scary Background 🎃
+    </label>
+    <Button
+      id="btn-take-photo"
+      className="text-xl transition-all"
+      variant="secondary"
+      disabled
+    >
+      Take Photo
+    </Button>
+  </div>
 </Layout>
 
 <script>
