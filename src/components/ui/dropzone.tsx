@@ -58,10 +58,10 @@ export default function Dropzone() {
   function NoPhoto() {
     return (
       <div className="flex flex-col h-full items-center justify-evenly">
-        <CloudUpload size={48} />
-        <p className="text-lg font-medium text-gray-600">Drop or upload your photo!</p>
+        <CloudUpload className="hover:animate-bounce" size={48} />
+        <p className="text-lg font-medium text-gray-100">Drop or upload your photo!</p>
         <Button className="mt-4" variant="secondary">
-          Upload Photo
+          Select Photo
         </Button>
         <input ref={inputRef} type="file" accept="image/*" className="hidden" onChange={handleFileChange} />
       </div>)
@@ -82,7 +82,7 @@ export default function Dropzone() {
 
   return (
     <>
-      <div className={`w-full h-64 p-4 rounded-lg border-2 border-dashed border-gray-300 flex justify-center items-center
+      <div className={`w-full backdrop-blur-sm h-64 p-4 rounded-lg border-2 border-dashed border-gray-300 flex justify-center items-center
     ${dragOver ? 'bg-gray-100' : ''} ${uploadingPhoto ? 'pointer-events-none' : ''} relative cursor-pointer`}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
