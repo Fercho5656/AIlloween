@@ -129,6 +129,9 @@ console.log({ url });
   const downloadImgLi = document.querySelector(
     "#download-img",
   ) as HTMLLIElement;
+  const shareToTwitter = document.querySelector(
+    "#share-twitter",
+  ) as HTMLLIElement;
 
   let selectedCostume: Costume | null = getState().selectedCostume;
 
@@ -215,6 +218,16 @@ console.log({ url });
     dropdownMenu.classList.toggle("hidden");
     dropdownMenu.style.opacity =
       dropdownMenu.style.opacity === "100" ? "0" : "100";
+  });
+
+  shareToTwitter.addEventListener("click", () => {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(
+      "Check out my multiple spooky costumes of me made at ailloween.netlify.app! 🎃👻",
+    );
+    const hashtags = "spooky,halloween,cloudinary,midudev,hackaton";
+    const tweetUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}&hashtags=${hashtags}`;
+    window.open(tweetUrl, "_blank");
   });
 
   document.addEventListener("click", (event: any) => {
