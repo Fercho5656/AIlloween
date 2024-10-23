@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Camera, Pointer, Sparkles, Zap, Image } from "lucide-react";
 import Dropzone from "@/components/ui/dropzone";
+import examples from "@/data/examples.json";
 ---
 
 <Layout title="AIlloween">
@@ -100,31 +101,119 @@ import Dropzone from "@/components/ui/dropzone";
 
 	<section
 		id="examples"
-		class="w-full h-screen bg-orange-100 text-black py-12 md:py-24 lg:py-32"
+		class="w-full h-full bg-orange-100 text-black py-12 md:py-24 lg:pb-32"
 	>
+		<div class="px-4 md:px-6">
+			<h2
+				class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12"
+			>
+				Examples
+			</h2>
+			<div class="py-28 flex gap-8">
+				<div class="w-1/2 text-center">
+					<img
+						src="https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/correct_photo"
+						alt="original subject"
+						class="w-64 mx-auto h-auto rounded-lg shadow-lg"
+						loading="lazy"
+					/>
+					<p class="text-center text-xl font-medium text-gray-500 mt-8">
+						Original Photo
+					</p>
+					<ul
+						class="w-auto inline-block list-disc text-xl text-left font-medium text-gray-500 mt-4"
+					>
+						<li>Good lighting</li>
+						<li>Clear subject</li>
+						<li>High resolution</li>
+						<li>Background not too busy</li>
+					</ul>
+				</div>
+				<div
+					class="w-1/2 container grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16"
+				>
+					{
+						Object.values(examples).map((example: any) => (
+							<div class="flex flex-col items-center">
+								<img
+									src={example.correct_url}
+									alt={example.name}
+									class="w-64 h-auto rounded-lg shadow-lg"
+									loading="lazy"
+								/>
+								<p class="text-center text-xl font-medium text-gray-500 mt-8">
+									{example.name}
+								</p>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</div>
+
+		<div class="px-4 md:px-6">
+			<div class="py-28 flex gap-8">
+				<div class="w-1/2 text-center">
+					<img
+						src="https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/incorrect_photo"
+						alt="original subject"
+						class="w-64 mx-auto h-auto rounded-lg shadow-lg"
+						loading="lazy"
+					/>
+					<p class="text-center text-xl font-medium text-gray-500 mt-8">
+						Original Photo
+					</p>
+					<ul
+						class="w-auto inline-block list-disc text-xl text-left font-medium text-gray-500 mt-4"
+					>
+						<li>Multiple subjects</li>
+						<li>Face covered</li>
+					</ul>
+				</div>
+				<div
+					class="w-1/2 container grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16"
+				>
+					{
+						Object.values(examples).map((example: any) => (
+							<div class="flex flex-col items-center">
+								<img
+									src={example.incorrect_url}
+									alt={example.name}
+									class="w-64 h-auto rounded-lg shadow-lg"
+									loading="lazy"
+								/>
+								<p class="text-center text-xl font-medium text-gray-500 mt-8">
+									{example.name}
+								</p>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</div>
 	</section>
+
+	<script></script>
+
+	<style>
+		h1 {
+			text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+		}
+
+		h1 + p {
+			text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+		}
+		span:is(.text-gradient) {
+			text-shadow: none;
+		}
+
+		section#hero {
+			mask-image: linear-gradient(
+				transparent 0%,
+				black 20%,
+				black 80%,
+				transparent 100%
+			);
+		}
+	</style>
 </Layout>
-
-<script></script>
-
-<style>
-	h1 {
-		text-shadow: 0 0 20px rgba(0, 0, 0, 1);
-	}
-
-	h1 + p {
-		text-shadow: 0 0 5px rgba(0, 0, 0, 1);
-	}
-	span:is(.text-gradient) {
-		text-shadow: none;
-	}
-
-	section#hero {
-		mask-image: linear-gradient(
-			transparent 0%,
-			black 20%,
-			black 80%,
-			transparent 100%
-		);
-	}
-</style>
