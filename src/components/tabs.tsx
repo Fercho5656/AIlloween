@@ -23,9 +23,9 @@ export function Tabs({ data }: Props) {
   }
 
   return (
-    <BaseTabs defaultValue={categories[0]}>
+    <BaseTabs className="container" defaultValue={categories[0]}>
       <ScrollArea>
-        <TabsList className="p-8">
+        <TabsList className="container p-8">
           {categories.map((category) => (
             <TabsTrigger key={category} value={category} className="text-2xl">
               {category}
