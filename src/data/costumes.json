@@ -13,114 +13,73 @@
     {
       "title": "Jason Voorhees",
       "prompt": "Jason Voorhees mask and clothes for halloween",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/jason_voorhees"
     },
     {
       "title": "Pennywise",
       "prompt": "Pennywise from IT costume and wig for halloween",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/static/pennywise"
     },
     {
       "title": "Chucky",
       "prompt": "Chucky from Child Play scars and clothes for halloween",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/static/chucky"
     },
     {
       "title": "Leatherface",
       "prompt": "Leatherface mask and clothes for halloween",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
-    },
-    {
-      "title": "Ghostface",
-      "prompt": "Ghostface",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
-    },
-    {
-      "title": "Joker",
-      "prompt": "DC's The Joker",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
-    }
-  ],
-  "Fantasy": [
-    {
-      "title": "Harry Potter",
-      "prompt": "Harry Potter",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
-    }
-  ],
-  "Superheroes": [
-    {
-      "title": "Wonder Woman",
-      "prompt": "Wonder Woman",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
-    }
-  ],
-  "Mythological Figures": [
-    {
-      "title": "Medusa",
-      "prompt": "Medusa",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
-    },
-    {
-      "title": "Valkyrie",
-      "prompt": "Valkyrie",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
-    },
-    {
-      "title": "Achilles",
-      "prompt": "Achilles",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/static/leatherface"
     }
   ],
   "Classic Monsters": [
     {
       "title": "Vampire",
-      "prompt": "Vampire",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
+      "prompt": "Vampire costume for halloween",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/vampire"
     },
     {
       "title": "Witch",
-      "prompt": "Witch",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
+      "prompt": "Witch costume for halloween",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/witch"
     },
     {
       "title": "Frankenstein’s Monster",
-      "prompt": "Frankenstein’s Monster",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
+      "prompt": "Frankenstein’s Monster costume for halloween",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/frankenstein"
     },
     {
       "title": "Zombie",
-      "prompt": "Zombie",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
+      "prompt": "Zombie costume for halloween",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/static/zombie"
     },
     {
       "title": "Mummy",
-      "prompt": "Mummy",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
+      "prompt": "Mummy costume for halloween",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/static/mummy"
     }
   ],
-  "Pirates": [
+  "Comics": [
     {
-      "title": "Captain Jack Sparrow",
-      "prompt": "Captain Jack Sparrow",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
+      "title": "Wonder Woman",
+      "prompt": "Wonder Woman costume for halloween",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/static/wonder_woman"
+    },
+    {
+      "title": "Joker",
+      "prompt": "DC's The Joker costume for halloween",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/joker"
     }
   ],
   "Video Games": [
     {
-      "title": "Lara Croft",
-      "prompt": "Lara Croft",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
+      "title": "Mario Bros",
+      "prompt": "Mario from Super Mario Bros",
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/mario"
     },
     {
       "title": "Geralt of Rivia",
       "prompt": "Geralt of Rivia",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
-    },
-    {
-      "title": "Link",
-      "prompt": "Link",
-      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/fdhvoxkme7qzjutpbxgl?_a=BBGABlXg0"
+      "url": "https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/geralt"
     }
   ]
 }
