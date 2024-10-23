@@ -19,7 +19,24 @@ console.log({ url });
 <Layout title="Photo Booth">
   <section class="w-full flex gap-4 pt-32">
     <div class="w-1/2 grid items-center">
-      <div class="w-full grid place-items-center text-white">
+      <div
+        class="w-full px-16 grid grid-cols-2 gap-x-2 place-items-center text-white"
+      >
+        <div class="w-full flex flex-col items-center text-white mb-4">
+          <h2 class="text-2xl font-bold mt-8">Instructions</h2>
+          <ol class="list-decimal list-inside mt-4">
+            <li>
+              Select a costume from the list on the right side of the screen.
+            </li>
+            <li>
+              Click the <strong>Take Photo</strong> button to apply the costume to
+              your image.
+            </li>
+            <li>
+              Click the <strong>Download</strong> button to save your photo.
+            </li>
+          </ol>
+        </div>
         <div class="grid place-items-center relative">
           <LoadingSpinner
             id="loading-spinner"
@@ -35,7 +52,7 @@ console.log({ url });
               >
               <ul
                 id="dropdown-menu"
-                class="transition-opacity rounded-sm opacity-0 absolute bg-gray-100 text-black min-w-[160px] shadow-lg z-[5]"
+                class="transition-opacity rounded-sm hidden opacity-0 absolute bg-gray-100 text-black min-w-[160px] shadow-lg z-[5]"
               >
                 <li
                   id="download-img"
@@ -62,24 +79,9 @@ console.log({ url });
             />
           </div>
         </div>
-        <div class="w-full flex flex-col items-center text-white mt-4">
-          <h2 class="text-2xl font-bold mt-8">Instructions</h2>
-          <ol class="list-decimal list-inside mt-4">
-            <li>
-              Select a costume from the list on the right side of the screen.
-            </li>
-            <li>
-              Click the <strong>Take Photo</strong> button to apply the costume to
-              your image.
-            </li>
-            <li>
-              Click the <strong>Download</strong> button to save your photo.
-            </li>
-          </ol>
-        </div>
       </div>
     </div>
-    <div class="w-1/2">
+    <div class="w-1/2 px-16">
       <Tabs data={costumes} client:load />
     </div>
   </section>
@@ -144,7 +146,7 @@ console.log({ url });
     loadingSpinner.classList.add("opacity-0");
   };
 
-  btnTakePhoto.addEventListener("click", () => {
+  btnTakePhoto.addEventListener("click", async () => {
     if (selectedCostume == null) return;
 
     const options: ImageOptions = {
@@ -163,8 +165,24 @@ console.log({ url });
     }
 
     const transformedUrl = getCldImageUrl(options);
-    mainImg.src = transformedUrl;
     handleInitLoad();
+    const response = await fetch(transformedUrl, {
+      mode: "cors",
+    });
+
+    if (response.status === 423) {
+      // retry once
+      const response = await fetch(transformedUrl, {
+        mode: "cors",
+      });
+
+      if (response.status !== 423) {
+        console.error("Failed to apply costume");
+        return;
+      }
+    }
+
+    mainImg.src = response.url;
   });
 
   const downloadImg = async () => {
@@ -194,6 +212,7 @@ console.log({ url });
   downloadImgLi.addEventListener("click", downloadImg);
 
   dropdownToggle.addEventListener("click", () => {
+    dropdownMenu.classList.toggle("hidden");
     dropdownMenu.style.opacity =
       dropdownMenu.style.opacity === "100" ? "0" : "100";
   });
@@ -204,6 +223,7 @@ console.log({ url });
       !dropdownMenu.contains(event.target)
     ) {
       dropdownMenu.style.opacity = "0";
+      dropdownMenu.classList.add("hidden");
     }
   });
 
