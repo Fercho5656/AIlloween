@@ -1,215 +1,219 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { CldUploadWidget } from "astro-cloudinary";
-import { Pointer, Sparkles, Zap, Image } from "lucide-react";
+import { Camera, Pointer, Sparkles, Zap, Image } from "lucide-react";
 import Dropzone from "@/components/ui/dropzone";
+import examples from "@/data/examples.json";
 ---
 
 <Layout title="AIlloween">
-	<main class="flex-1">
-		<section
-			class="w-full bg-black text-white py-12 md:py-24 lg:py-32 xl:py-48"
+	<section
+		id="hero"
+		class="w-full h-screen bg-black text-white py-12 md:py-24 lg:py-32 xl:py-64 inset-0 bg-[url('/hero.webp')] bg-cover bg-center"
+	>
+		<div
+			class="flex flex-col items-center justify-center space-y-4 text-center px-4 md:px-6"
 		>
-			<div class="px-4 md:px-6">
-				<div
-					class="flex flex-col items-center justify-center space-y-4 text-center"
+			<h1
+				class="text-7xl font-bold mb-12 tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none"
+			>
+				Create Spooktacular Costumes with <span class="text-gradient"
+					>AIlloween</span
 				>
-					<div class="space-y-4">
-						<h1
-							class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none"
-						>
-							Create Spooktacular Costumes with <span class="text-gradient"
-								>AIlloween</span
-							>
-						</h1>
-						<p class="mx-auto max-w-[700px] text-gray-300 md:text-2xl">
-							Unleash your creativity with our AI-powered costume generator.
-							Design unique, personalized Halloween costumes in seconds!
-						</p>
-					</div>
-					<div class="pt-12 space-x-4">
-						<Dropzone client:load />
-					</div>
+			</h1>
+			<p class="mx-auto max-w-[55ch] text-white font-medium text-3xl">
+				Unleash your creativity with our AI-powered costume generator. Preview
+				popular Halloween costumes in seconds!
+			</p>
+			<div class="pt-12 space-x-4">
+				<Dropzone client:load />
+			</div>
+		</div>
+	</section>
+
+	<section
+		id="how-it-works"
+		class="w-full h-screen bg-slate-950 text-white py-12 md:py-24 lg:py-32"
+	>
+		<div class="px-4 md:px-6">
+			<h2
+				class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12"
+			>
+				How it Works
+			</h2>
+			<div
+				class="py-28 text-lg container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16"
+			>
+				<a class="transition-transform hover:scale-[1.01]" href="#hero">
+					<Card>
+						<CardHeader>
+							<Camera className="w-12 h-12 text-orange-500 mb-4" size={48} />
+							<CardTitle className="text-xl">Upload your photo</CardTitle>
+						</CardHeader>
+						<CardContent>
+							Upload a photo of yourself to get started with our AI costume
+						</CardContent>
+					</Card>
+				</a>
+
+				<Card>
+					<CardHeader>
+						<Pointer className="w-12 h-12 text-orange-500 mb-4" size={48} />
+						<CardTitle className="text-xl">Select Your Costume</CardTitle>
+					</CardHeader>
+					<CardContent>
+						Let our AI know what kind of costume you want to try!
+					</CardContent>
+				</Card>
+
+				<Card>
+					<CardHeader>
+						<Sparkles className="w-12 h-12 text-orange-500 mb-4" size="{48}" />
+						<CardTitle className="text-xl">AI Magic</CardTitle>
+					</CardHeader>
+					<CardContent>
+						Cloudinary advanced AI processes your selection and generates a
+						unique preview
+					</CardContent>
+				</Card>
+
+				<Card>
+					<CardHeader>
+						<Zap className="w-12 h-12 text-orange-500 mb-4" size="{48}" />
+						<CardTitle className="text-xl">Lightning Results</CardTitle>
+					</CardHeader>
+					<CardContent>
+						Get your custome design in less that a minute, ready to be shared
+					</CardContent>
+				</Card>
+				<Card>
+					<CardHeader>
+						<Image className="w-12 h-12 text-orange-500 mb-4" size="{48}" />
+						<CardTitle className="text-xl">Spooky Scary Background</CardTitle>
+					</CardHeader>
+					<CardContent>
+						Replace the background with a spooky scary 🎃 Halloween themed one
+					</CardContent>
+				</Card>
+			</div>
+		</div>
+	</section>
+
+	<section
+		id="examples"
+		class="w-full h-full bg-orange-100 text-black py-12 md:py-24 lg:pb-32"
+	>
+		<div class="px-4 md:px-6">
+			<h2
+				class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12"
+			>
+				Examples
+			</h2>
+			<div class="py-28 flex gap-8">
+				<div class="w-1/2 text-center">
+					<img
+						src="https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/correct_photo"
+						alt="original subject"
+						class="w-64 mx-auto h-auto rounded-lg shadow-lg"
+						loading="lazy"
+					/>
+					<p class="text-center text-xl font-medium text-gray-500 mt-8">
+						Original Photo
+					</p>
+					<ul
+						class="w-auto inline-block list-disc text-xl text-left font-medium text-gray-500 mt-4"
+					>
+						<li>Good lighting</li>
+						<li>Clear subject</li>
+						<li>High resolution</li>
+						<li>Background not too busy</li>
+					</ul>
+				</div>
+				<div
+					class="w-1/2 container grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16"
+				>
+					{
+						Object.values(examples).map((example: any) => (
+							<div class="flex flex-col items-center">
+								<img
+									src={example.correct_url}
+									alt={example.name}
+									class="w-64 h-auto rounded-lg shadow-lg"
+									loading="lazy"
+								/>
+								<p class="text-center text-xl font-medium text-gray-500 mt-8">
+									{example.name}
+								</p>
+							</div>
+						))
+					}
 				</div>
 			</div>
-		</section>
+		</div>
 
-		<section
-			class="w-full bg-orange-100 text-black py-12 md:py-24 lg:py-32 xl:py-48"
-		>
-			<div class="px-4 md:px-6">
-				<h2
-					class="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12"
-				>
-					How it Works
-				</h2>
+		<div class="px-4 md:px-6">
+			<div class="py-28 flex gap-8">
+				<div class="w-1/2 text-center">
+					<img
+						src="https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/incorrect_photo"
+						alt="original subject"
+						class="w-64 mx-auto h-auto rounded-lg shadow-lg"
+						loading="lazy"
+					/>
+					<p class="text-center text-xl font-medium text-gray-500 mt-8">
+						Original Photo
+					</p>
+					<ul
+						class="w-auto inline-block list-disc text-xl text-left font-medium text-gray-500 mt-4"
+					>
+						<li>Multiple subjects</li>
+						<li>Face covered</li>
+					</ul>
+				</div>
 				<div
-					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+					class="w-1/2 container grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16"
 				>
-					<Card>
-						<CardHeader>
-							<Pointer className="w-12 h-12 text-orange-500 mb-4" size={48} />
-							<CardTitle>Select Your Costume</CardTitle>
-						</CardHeader>
-						<CardContent>
-							Let our AI know what kind of costume you want to try!
-						</CardContent>
-					</Card>
-
-					<Card>
-						<CardHeader>
-							<Sparkles
-								className="w-12 h-12 text-orange-500 mb-4"
-								size="{48}"
-							/>
-							<CardTitle>AI Magic</CardTitle>
-						</CardHeader>
-						<CardContent>
-							Cloudinary advanced AI processes your selection and generates
-							unique previews
-						</CardContent>
-					</Card>
-
-					<Card>
-						<CardHeader>
-							<Zap className="w-12 h-12 text-orange-500 mb-4" size="{48}" />
-							<CardTitle>Instant Results</CardTitle>
-						</CardHeader>
-						<CardContent>
-							Get your custome design in seconds, ready to be shared
-						</CardContent>
-					</Card>
-
-					<Card>
-						<CardHeader>
-							<Image className="w-12 h-12 text-orange-500 mb-4" size="{48}" />
-							<CardTitle>Spooky Scary Background</CardTitle>
-						</CardHeader>
-						<CardContent>
-							Replace the background with a spooky scary Halloween themed one
-						</CardContent>
-					</Card>
+					{
+						Object.values(examples).map((example: any) => (
+							<div class="flex flex-col items-center">
+								<img
+									src={example.incorrect_url}
+									alt={example.name}
+									class="w-64 h-auto rounded-lg shadow-lg"
+									loading="lazy"
+								/>
+								<p class="text-center text-xl font-medium text-gray-500 mt-8">
+									{example.name}
+								</p>
+							</div>
+						))
+					}
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<CldUploadWidget
-			id="cld-upload-widget"
-			uploadPreset="ailloween"
-			options={{
-				sources: ["local"],
-				multiple: false,
-			}}
-		>
-			<Button>Upload</Button>
-		</CldUploadWidget>
+	<script></script>
 
-		<img id="main-img" src="" alt="" />
+	<style>
+		h1 {
+			text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+		}
 
-		<select disabled name="costume-select" id="costume-select">
-			<option value="" selected disabled>Select a costume</option>
-			<option value="michael myers">Michael Myers</option>
-			<option value="freddy krueger">Freddy Krueger</option>
-			<option value="joker">The Joker</option>
-		</select>
-		<label for="chk-replace-bg"
-			>Add <span class="text-gradient">spooky scary</span> background
-			<input
-				disabled
-				type="checkbox"
-				name="chk-replace-bg"
-				id="chk-replace-bg"
-			/>
-		</label>
-		<Button disabled id="btn-generate-costume">Generate</Button>
-	</main>
+		h1 + p {
+			text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+		}
+		span:is(.text-gradient) {
+			text-shadow: none;
+		}
+
+		section#hero {
+			mask-image: linear-gradient(
+				transparent 0%,
+				black 20%,
+				black 80%,
+				transparent 100%
+			);
+		}
+	</style>
 </Layout>
-
-<script>
-	import { getCldImageUrl } from "astro-cloudinary/helpers";
-	import type { CloudinaryUploadEvent } from "@/types/cloudinary/uploadEvent";
-	import type { ImageOptions } from "@cloudinary-util/url-loader";
-
-	const cldUploadWidget = document.querySelector("#cld-upload-widget");
-	const mainImg = document.querySelector("#main-img") as HTMLImageElement;
-	const costumeSelect = document.querySelector(
-		"#costume-select",
-	) as HTMLSelectElement;
-	const btnGenerateCostume = document.querySelector(
-		"#btn-generate-costume",
-	) as HTMLButtonElement;
-	const chkReplaceBg = document.querySelector(
-		"#chk-replace-bg",
-	) as HTMLInputElement;
-
-	if (cldUploadWidget) {
-		cldUploadWidget.addEventListener("clduploadwidget:success", ((
-			e: CustomEvent<CloudinaryUploadEvent>,
-		) => {
-			const { detail } = e;
-			console.log(detail);
-			const url = detail.info.secure_url;
-			mainImg.src = url;
-			mainImg.alt = detail.info.original_filename;
-			mainImg.dataset.publicId = detail.info.public_id;
-			costumeSelect.disabled = false;
-		}) as EventListener);
-	}
-
-	costumeSelect.addEventListener("change", () => {
-		btnGenerateCostume.disabled = false;
-		chkReplaceBg.disabled = false;
-	});
-
-	btnGenerateCostume.addEventListener("click", () => {
-		const selectedCostume = costumeSelect.value;
-		const imageId = mainImg.dataset.publicId ?? "";
-
-		if (!selectedCostume || !imageId) {
-			return;
-		}
-
-		const options: ImageOptions = {
-			src: imageId,
-			replace: {
-				from: "wearings",
-				to: `${selectedCostume} makeup and costume for Halloween`,
-				preserveGeometry: true,
-			},
-		};
-
-		if (chkReplaceBg.checked) {
-			options.replaceBackground = {
-				prompt: "spooky scary halloween background",
-			};
-		}
-
-		const transformedUrl = getCldImageUrl(options);
-
-		mainImg.src = transformedUrl;
-	});
-</script>
-
-<style>
-	main {
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-</style>

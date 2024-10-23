@@ -1,0 +1,17 @@
+{
+  "michael_myers": {
+    "name": "Michael Myers",
+    "correct_url": "https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/michael_myers",
+    "incorrect_url": "https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/incorrect_myers"
+  },
+  "jason_voorhees": {
+    "name": "Jason Voorhees",
+    "correct_url": "https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/jason_voorhees",
+    "incorrect_url": "https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/incorrect_jason"
+  },
+  "freddy_krueger": {
+    "name": "Freddy Krueger",
+    "correct_url": "https://res.cloudinary.com/fercho/image/upload/f_auto/q_auto/v1/ailloween/static/freddy_kruegger",
+    "incorrect_url": "https://res.cloudinary.com/fercho/image/upload/f_auto,q_auto/v1/ailloween/static/incorrect_freddy"
+  }
+}
