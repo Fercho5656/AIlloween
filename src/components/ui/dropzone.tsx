@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { CloudUpload, Trash2, Send } from "lucide-react";
+import { CloudUpload, Trash2, Send, LoaderCircle } from "lucide-react";
 import { Button } from "./button";
 import { uploadPhoto } from '@/services/uploadService'
 
@@ -93,7 +93,9 @@ export default function Dropzone() {
       </div>
       {selectedFile ?
         <Button className="mt-4 px-4 py-2" variant="default" onClick={handleSend} disabled={uploadingPhoto}>
-          <Send className="mr-2" size={24} />
+          {uploadingPhoto ? <LoaderCircle className="mr-2 animate-spin" size={24} /> :
+            <Send className="mr-2" size={24} />
+          }
           Send photo
         </Button> : null
       }
