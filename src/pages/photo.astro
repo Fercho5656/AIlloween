@@ -150,10 +150,14 @@ console.log({ url });
     "#instructions-dots",
   ) as HTMLSpanElement;
 
+  let isLoading = false;
+
   let selectedCostume: Costume | null = getState().selectedCostume;
 
   const handleInitLoad = () => {
+    isLoading = true;
     btnTakePhoto.disabled = true;
+    chkReplaceBg.disabled = true;
     mainImg.classList.add("brightness-50");
     loadingSpinner.classList.add("opacity-100");
     loadingSpinner.classList.remove("opacity-0");
@@ -161,9 +165,11 @@ console.log({ url });
 
   const handleFinishLoad = () => {
     btnTakePhoto.disabled = false;
+    chkReplaceBg.disabled = false;
     mainImg.classList.remove("brightness-50");
     loadingSpinner.classList.remove("opacity-100");
     loadingSpinner.classList.add("opacity-0");
+    isLoading = false;
   };
 
   btnTakePhoto.addEventListener("click", async () => {
@@ -266,6 +272,7 @@ console.log({ url });
   });
 
   subscribe((state) => {
+    if (isLoading) return;
     const selectedCostumeString = JSON.stringify(state.selectedCostume);
     selectedCostume = state.selectedCostume;
     btnTakePhoto.disabled = selectedCostumeString == "{}";
