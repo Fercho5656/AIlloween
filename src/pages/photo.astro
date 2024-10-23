@@ -91,11 +91,19 @@ console.log({ url });
       <Tabs data={costumes} client:load />
     </div>
   </section>
-  <div id="div-take-photo" class="absolute bottom-4 right-4 opacity-0">
-    <input type="checkbox" id="chk-replace-bg" />
-    <label for="chk-replace-bg" class="text-white">
-      Add Spooky Scary Background 🎃
-    </label>
+  <div
+    id="div-take-photo"
+    class="absolute flex flex-col bottom-4 right-4 opacity-0 invisible bg-black p-8 rounded-sm transition-opacity"
+  >
+    <div class="flex items-center mb-4">
+      <input type="checkbox" id="chk-replace-bg" class="mr-2 cursor-pointer" />
+      <label
+        for="chk-replace-bg"
+        class="text-white cursor-pointer select-none text-xl"
+      >
+        Add <span class="text-gradient">Spooky Scary</span> Background 🎃
+      </label>
+    </div>
     <Button
       id="btn-take-photo"
       className="text-xl transition-all"
@@ -262,5 +270,6 @@ console.log({ url });
     selectedCostume = state.selectedCostume;
     btnTakePhoto.disabled = selectedCostumeString == "{}";
     divTakePhoto.classList.toggle("opacity-0", selectedCostumeString == "{}");
+    divTakePhoto.classList.toggle("invisible", selectedCostumeString == "{}");
   });
 </script>
